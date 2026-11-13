@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "songhud",
+  "version": "${version}",
+  "name": "SongHUD",
+  "description": "Synced lyrics on screen. No native code, works on PC and Android launchers (Zalith/Pojav).",
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": { "client": ["songhud.SongHud"] },
+  "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
