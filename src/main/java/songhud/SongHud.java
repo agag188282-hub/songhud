@@ -287,7 +287,7 @@ public class SongHud implements ClientModInitializer {
 
     static void renderAir(DrawContext ctx, MinecraftClient mc, List<Line> ls, int cur) {
         Camera cam = mc.gameRenderer.getCamera();
-        Vec3d c = cam.getPos();
+        var ce = mc.getCameraEntity(); if (ce == null) return; Vec3d c = new Vec3d(ce.getX(), ce.getEyeY(), ce.getZ());
         double yaw = Math.toRadians(cam.getYaw()), pit = Math.toRadians(cam.getPitch());
         double fx = -Math.sin(yaw) * Math.cos(pit), fy = -Math.sin(pit), fz = Math.cos(yaw) * Math.cos(pit);
         double rx = -Math.cos(yaw), rz = -Math.sin(yaw);
