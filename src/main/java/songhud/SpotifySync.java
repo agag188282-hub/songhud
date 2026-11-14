@@ -221,7 +221,7 @@ public final class SpotifySync {
                 } else if (code == 200) {
                     handle(JsonParser.parseString(r.body()).getAsJsonObject(), rttMs);
                 } else {
-                    SongHud.status = "Spotify HTTP " + code;
+                    SongHud.status = "Spotify HTTP " + code + " " + r.body().replaceAll("[^A-Za-z0-9 .,:_-]", " ").replaceAll(" +", " ").trim();
                     sleep = 5000;
                 }
             } catch (Exception e) {
